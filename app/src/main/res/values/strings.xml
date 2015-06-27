@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Kulir 100\u00B0 C</string>
+
+
+    <string-array name="temperature_levels">
+        <item>Hot 90\u00B0 C</item>
+        <item>Warm 70\u00B0 C</item>
+        <item>Normal 50\u00B0 C</item>
+    </string-array>
+</resources>
