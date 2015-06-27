@@ -1,12 +1,18 @@
 package io.github.dnivra26.kulirandroid;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
 @Setter
-@AllArgsConstructor(suppressConstructorProperties = true)
+@Getter
 public class Alarm {
     int temperature;
     int hour;
     int minute;
+
+    public Alarm(int temperature, int hour, int minute) {
+        this.temperature = temperature;
+        this.hour = hour;
+        this.minute = minute;
+    }
 }

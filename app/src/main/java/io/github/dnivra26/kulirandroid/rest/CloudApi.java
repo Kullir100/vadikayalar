@@ -6,7 +6,7 @@ import retrofit.http.POST;
 
 public interface CloudApi {
 
-    @POST("/createEvent")
+    @POST("/save")
     void createEvent(Alarm alarm, ResponseCallback responseCallback);
 
 }

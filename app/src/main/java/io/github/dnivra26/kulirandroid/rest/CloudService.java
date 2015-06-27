@@ -6,7 +6,7 @@ import retrofit.RestAdapter;
 
 public class CloudService {
 
-    private static final String BASE_URL = "";
+    private static final String BASE_URL = "http://localhost:3344";
     private final RestAdapter restAdapter;
     private final CloudApi cloudApi;
 
