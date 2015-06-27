@@ -1,5 +1,7 @@
 package io.github.dnivra26.kulirandroid.rest;
 
+import io.github.dnivra26.kulirandroid.Alarm;
+import retrofit.ResponseCallback;
 import retrofit.RestAdapter;
 
 public class CloudService {
@@ -15,7 +17,7 @@ public class CloudService {
         cloudApi = restAdapter.create(CloudApi.class);
     }
 
-    public void createAlarm() {
-        cloudApi.createEvent();
+    public void createAlarm(Alarm alarm, ResponseCallback responseCallback) {
+        cloudApi.createEvent(alarm, responseCallback);
     }
 }
