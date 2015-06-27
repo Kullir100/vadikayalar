@@ -37,4 +37,6 @@ dependencies {
     apt "org.androidannotations:androidannotations:3.3.1"
     compile "org.androidannotations:androidannotations-api:3.3.1"
     compile 'com.squareup.retrofit:retrofit:1.9.0'
+
+    compile 'com.android.support:design:22.2.0'
 }

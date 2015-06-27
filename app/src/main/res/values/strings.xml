@@ -7,4 +7,8 @@
         <item>Warm 70\u00B0 C</item>
         <item>Normal 50\u00B0 C</item>
     </string-array>
+    <string name="title_activity_add_event">Kulir 100\u00B0 C</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

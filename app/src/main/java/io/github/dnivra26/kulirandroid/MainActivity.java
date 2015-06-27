@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     @AfterViews
     public void init() {
+        eventTimePicker.setIs24HourView(true);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.temperature_levels, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         int temperatureInDegree = Util.getTemperatureInDegree(temperature);
         int hour = eventTimePicker.getCurrentHour();
         int minute = eventTimePicker.getCurrentMinute();
-        Alarm alarm = new Alarm(temperatureInDegree, hour, minute);
+        Alarm alarm = new Alarm(temperatureInDegree, hour, minute, Util.getDeviceId(this));
         cloudService.createAlarm(alarm, new ResponseCallback() {
             @Override
             public void success(Response response) {
