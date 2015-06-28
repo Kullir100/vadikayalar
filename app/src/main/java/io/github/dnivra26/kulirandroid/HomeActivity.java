@@ -6,11 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -32,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
     @ViewById(R.id.add_new_event)
     FloatingActionButton floatingActionButton;
 
+    @ViewById(R.id.no_event_label)
+    TextView noEventLabel;
+
     List<Alarm> alarmList = new ArrayList<>();
 
     ArrayAdapter<Alarm> alarmArrayAdapter;
@@ -44,7 +47,13 @@ public class HomeActivity extends AppCompatActivity {
         cloudService = new CloudService();
     }
 
-    @AfterViews
+    @Override
+    protected void onResume() {
+        super.onResume();
+        init();
+
+    }
+
     public void init() {
         alarmArrayAdapter = new AlarmArrayAdapter(this, alarmList);
         eventList.setAdapter(alarmArrayAdapter);
@@ -54,11 +63,14 @@ public class HomeActivity extends AppCompatActivity {
             public void success(Alarm alarm, Response response) {
                 alarmList.add(alarm);
                 alarmArrayAdapter.notifyDataSetChanged();
+                noEventLabel.setVisibility(View.GONE);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(HomeActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                noEventLabel.setVisibility(View.VISIBLE);
+
             }
         });
     }

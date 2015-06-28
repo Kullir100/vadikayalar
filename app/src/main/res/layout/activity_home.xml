@@ -21,4 +21,14 @@
         android:src="@mipmap/ic_plus_sign"
         app:elevation="4dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_event_label"
+        android:textSize="30sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:text="No Events Yet!!"/>
+
+
 </FrameLayout>
